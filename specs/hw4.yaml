@@ -2,14 +2,14 @@
 assignment: hw4
 
 compilers:
-  - &cpp g++ $@ -o $@.exec
   - &c gcc -lm $@ -o $@.exec
   - &javac javac $@
+  - &pycompile python3 -m py_compile $@
 
 files:
   - [facts.c, *c]
   - [Facts.java, *javac]
-  - [facts.py, null]
+  - [facts.py, *pycompile]
 
 tests:
   - [facts.c, $@.exec]

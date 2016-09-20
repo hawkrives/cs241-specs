@@ -5,13 +5,14 @@ compilers:
   - &cpp g++ $@ -o $@.exec
   - &c gcc -lm $@ -o $@.exec
   - &javac javac $@
+  - &pycompile python3 -m py_compile $@
 
 files:
   - [sqrts.C, *cpp]
   - [sqrts.c, *c]
   - [sqrts.scm, null]
   - [Sqrts.java, *javac]
-  - [sqrts.py, null]
+  - [sqrts.py, *pycompile]
 
 tests:
   - [sqrts.C, $@.exec]
