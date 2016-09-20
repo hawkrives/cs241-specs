@@ -18,5 +18,5 @@ tests:
   - [sqrts.C, $@.exec]
   - [sqrts.c, $@.exec]
   - [sqrts.scm, racket -r $@]
-  - [Sqrts.class, java $@]
+  - [Sqrts.java, java Sqrts]
   - [sqrts.py, python3 $@]

@@ -13,5 +13,5 @@ files:
 
 tests:
   - [facts.c, $@.exec]
-  - [Facts.class, java $@]
+  - [Facts.java, java Facts]
   - [facts.py, python3 $@]
