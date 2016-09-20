@@ -1,0 +1,16 @@
+---
+assignment: hw3
+
+compilers:
+  - &cpp g++ $@ -o $@.exec
+  - &c gcc -lm $@ -o $@.exec
+
+files:
+  - [facts.C, *cpp]
+  - [facts.c, *c]
+  - [facts.scm, null]
+
+tests:
+  - [facts.C, $@.exec]
+  - [facts.c, $@.exec]
+  - [facts.scm, racket -r $@]

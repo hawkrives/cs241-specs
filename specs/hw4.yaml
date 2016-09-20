@@ -1,0 +1,17 @@
+---
+assignment: hw4
+
+compilers:
+  - &cpp g++ $@ -o $@.exec
+  - &c gcc -lm $@ -o $@.exec
+  - &javac javac $@
+
+files:
+  - [facts.c, *c]
+  - [Facts.java, *javac]
+  - [facts.py, null]
+
+tests:
+  - [facts.c, $@.exec]
+  - [Facts.class, java $@]
+  - [facts.py, python3 $@]

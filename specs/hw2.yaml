@@ -1,0 +1,21 @@
+---
+assignment: hw2
+
+compilers:
+  - &cpp g++ $@ -o $@.exec
+  - &c gcc -lm $@ -o $@.exec
+  - &javac javac $@
+
+files:
+  - [sqrts.C, *cpp]
+  - [sqrts.c, *c]
+  - [sqrts.scm, null]
+  - [Sqrts.java, *javac]
+  - [sqrts.py, null]
+
+tests:
+  - [sqrts.C, $@.exec]
+  - [sqrts.c, $@.exec]
+  - [sqrts.scm, racket -r $@]
+  - [Sqrts.class, java $@]
+  - [sqrts.py, python3 $@]
