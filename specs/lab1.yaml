@@ -1,0 +1,15 @@
+---
+assignment: lab1
+folder: pp1
+
+compilers:
+  - &cpp g++ $@ -o $@.exec
+  - &c gcc -lm $@ -o $@.exec
+
+files:
+  - [facts_global.c, *c]
+  - [facts.C, *cpp]
+
+tests:
+  - [facts_global.c, $@.exec]
+  - [facts.C, $@.exec]
